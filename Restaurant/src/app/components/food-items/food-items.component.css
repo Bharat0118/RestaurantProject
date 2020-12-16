@@ -1,0 +1,33 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    height: 450px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.title {
+    color: #b76565;
+    font-size: 18px;
+}
+
+
+/* h4{
+    padding-top: 10px;
+    font-size: 20px;
+    /* padding: 9px; */
+
+
+/* color: #b1a94c;
+  }  */
+
+mat-spinner {
+    margin: 200px;
+}

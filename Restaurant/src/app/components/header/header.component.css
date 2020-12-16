@@ -1,0 +1,20 @@
+nav {
+    height: 80px;
+}
+
+li {
+    padding: 15px;
+}
+
+li a:hover {
+    color: #ffc107 !important;
+    text-decoration: underline;
+}
+
+mat-icon {
+    color: #ffc107;
+}
+
+mat-icon:hover {
+    background-color: none;
+}

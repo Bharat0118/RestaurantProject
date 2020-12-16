@@ -1,0 +1,21 @@
+<div class="main-con row">
+    <div class="sidenav">
+        <h2 class="text-warning">MENU</h2>
+        <a (click)="dish('tomato')">Starter</a>
+        <a (click)="dish('main course')">Main-Course</a>
+        <a (click)="dish('Indian')">Famous Indian Food</a>
+        <a (click)="dish('vegetarian')">Diet Food</a>
+        <a (click)="dish('pasta')">Pasta</a>
+        <a (click)="dish('burger')">Burger</a>
+        <a (click)="dish('chinese')">Chinese</a>
+        <a (click)="dish('eggs')">Eggs</a>
+        <a (click)="dish('sweet')">Sweet</a>
+        <a (click)="dish('pan')">Paan</a>
+        <a (click)="dish('Indian sweets')">Desert</a>
+        <a (click)="dish('drinks')">Drinks</a>
+        <a (click)="dish('wine')">Wine</a>
+    </div>
+    <div class="main">
+        <app-food-items [foodCategory]='item'></app-food-items>
+    </div>
+</div>

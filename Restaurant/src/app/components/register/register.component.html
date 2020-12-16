@@ -1,0 +1,67 @@
+<div class="back">
+    <div class="container">
+        <h1 class="text-warning">Registration Form</h1>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="form">
+            <mat-form-field class="form-element">
+                <input matInput type="text" placeholder="FirstName *" formControlName="fname">
+                <mat-error *ngIf="!myForm.controls['fname'].valid && myForm.controls['fname'].touched">
+                    <span *ngIf="form.fname.errors.required"> Filed is required *</span>
+                    <p *ngIf="form.fname.errors.minlength">You need to enter at least 2 characters</p>
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="LastName *" formControlName="lname">
+                <mat-error *ngIf="!myForm.controls['lname'].valid && myForm.controls['lname'].touched">
+                    Field is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-elementt">
+                <input matInput placeholder="Email-address *" formControlName="email">
+                <mat-error *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched">
+                    Email is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Password *" formControlName="password" type="password">
+                <mat-error *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched">
+                    {{ getErrorPassword() }}
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Address line 1 *" formControlName="address">
+                <mat-error *ngIf="!myForm.controls['address'].valid && myForm.controls['address'].touched">
+                    Address is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Address line 2 *" formControlName="address1">
+                <mat-error *ngIf="!myForm.controls['address1'].valid && myForm.controls['address1'].touched">
+                    Address is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="State *" formControlName="state">
+                <mat-error *ngIf="!myForm.controls['state'].valid && myForm.controls['state'].touched">
+                    State is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Pin No *" formControlName="pin">
+                <mat-error *ngIf="!myForm.controls['pin'].valid && myForm.controls['pin'].touched">
+                    Pin is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Phone Number *" formControlName="phone">
+                <mat-error *ngIf="!myForm.controls['phone'].valid && myForm.controls['phone'].touched">
+                    Phone number is Required *
+                </mat-error>
+            </mat-form-field><br>
+            <div class="form-element">
+                <button type="submit" class="button btn btn-outline-primary" [disabled]="!myForm.valid">Submit
+                    Form</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br>

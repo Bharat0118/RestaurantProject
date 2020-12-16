@@ -1,0 +1,15 @@
+<h1 class="text-center text-warning text-monospace">Food Items</h1>
+<hr>
+<div class='row'>
+    <div class="card col-md-5 m-3" *ngFor=' let dish of dishes'>
+        <img [src]="dish.image" alt="Avatar" style="width:100%; padding:8px ; float:center;">
+        <div class="container">
+            <h4 class="text-center color-light"><b>{{dish.title}}</b></h4>
+            <h4 class="text-center">Price: <span style=" font-size: 15px;color: #e09292;">{{dish.nutrition['nutrients'][0].amount}}</span> </h4>
+            <button class="btn btn-success " style="margin-left: 94px;" (click)="addToCart(dish.id)">Add Cart</button>
+        </div>
+    </div>
+</div>
+<div *ngIf='loader'>
+    <mat-spinner></mat-spinner>
+</div>

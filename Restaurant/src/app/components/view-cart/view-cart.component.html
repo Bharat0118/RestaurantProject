@@ -1,0 +1,49 @@
+<h1 style="margin:200px" *ngIf="itemIncart" class="text-danger font-weight-bold">Add Some Products To Cart</h1>
+<h1 class="text-center text-warning text-monospace">Ordered Items</h1>
+<hr>
+<div class="main" *ngIf="!itemIncart">
+    <section class="shopping-cart">
+        <ol class="ui-list shopping-cart--list" *ngFor="let cart of cartItems,index as ind">
+            <div type="text/template">
+                <li class="_grid shopping-cart--list-item row">
+                    <div class="_column product-image col-md-4 col-11 mx-auto">
+                        <img class="product-image--img" width="100%" style="padding:20px" src="{{cart.image}}" alt="Item image" />
+                    </div>
+                    <div class="_column product-info col-sm-6  mx-auto">
+                        <h4 class="product-name text-primary text-monospace">{{cart.title | uppercase}}</h4>
+                        <div class="price product-single-price text-primary">{{cart.price}}</div>
+                    </div>
+                    <div class="_column product-modifiers col-md-2 col-11 mx-auto">
+                        <div class="_grid">
+                            <button class="_btn _column product-subtract">-</button>
+                            <div class="_column product-qty">{{cart.quantity}}</div>
+                            <button class="_btn _column product-plus">+</button>
+                        </div>
+                        <button class="_btn entypo-trash product-remove" (click)="delete(cart._id)">Remove</button>
+                        <div class="price product-total-price">{{cart.price * cart.quantity | currency:"USD"}}</div>
+                    </div>
+                </li>
+            </div>
+        </ol>
+
+        <footer class="_grid cart-totals">
+            <div class="_column subtotal" id="subtotalCtr">
+                <div class="cart-totals-key">Subtotal</div>
+                <div class="cart-totals-value">{{total}}</div>
+            </div>
+            <div class="_column shipping" id="shippingCtr">
+                <div class="cart-totals-key">Shipping</div>
+                <div class="cart-totals-value">$10</div>
+            </div>
+
+            <div class="_column total" id="totalCtr">
+                <div class="cart-totals-key">Total</div>
+                <div class="cart-totals-value">{{subtotal}}</div>
+            </div>
+            <div class="_column checkout">
+                <button class="_btn checkout-btn entypo-forward" (click)="openDialog()">Checkout</button>
+            </div>
+        </footer>
+
+    </section>
+</div>

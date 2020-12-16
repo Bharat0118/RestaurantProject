@@ -1,0 +1,31 @@
+<h1 class="text-center text-danger">Order Details</h1>
+<hr>
+<mat-dialog-content class="mat-typography text-center p-4">
+    <div *ngFor="let details of user">
+        <h2 class="text-warning">Customer's Details</h2>
+        <mat-title class="font-weight-bold">Name : </mat-title>
+        <span>{{details.fname + details.lname}}</span>
+        <br>
+        <mat-title class="font-weight-bold">Email : </mat-title>
+        <span>{{details.email }}</span>
+        <br>
+        <mat-title class="font-weight-bold">Address : </mat-title>
+        <span>{{details.address }}</span>
+        <br>
+        <mat-title class="font-weight-bold">State : </mat-title>
+        <span>{{details.state }}</span>
+        <br>
+        <mat-title class="font-weight-bold">Pin Code : </mat-title>
+        <span>{{details.pin }}</span>
+        <br>
+        <mat-title class="font-weight-bold">Contact No. : </mat-title>
+        <span>{{details.phone }}</span>
+        <hr>
+        <h2 class="text-warning">Total Amout</h2>
+        <h3 class="bg-dark text-light font-weight-bold text-monospace">{{data.total}}</h3>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="canc" mat-button [mat-dialog-close]="true">Cancel</button>
+    <button mat-button class="btn btn-warning" cdkFocusInitial (click)='dialougeBox()'>Submit Order</button>
+</mat-dialog-actions>

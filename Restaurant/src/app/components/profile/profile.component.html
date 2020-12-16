@@ -1,0 +1,120 @@
+<!-- <h2 class="bg-dark text-light text-center" *ngIf='!checkService.isChecklogin()'>Welcome {{details.fname + details.lname}}</h2> -->
+<!-- <mat-dialog-content class="mat-typography text-center p-4">
+    <div *ngFor="let details of userDetails">
+        <h1 class="text-center bg-primary text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="50px" height="50px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>            Hello {{details.fname + details.lname | uppercase }}</h1>
+        <div class="bg-warning">
+            <h2 class="text-danger">User Details</h2>
+            <mat-title class="font-weight-bold">Name : </mat-title>
+            <span>{{details.fname + details.lname}}</span>
+            <br>
+            <mat-title class="font-weight-bold">Email : </mat-title>
+            <span>{{details.email }}</span>
+            <br>
+            <mat-title class="font-weight-bold">Address : </mat-title>
+            <span>{{details.address }}</span>
+            <br>
+            <mat-title class="font-weight-bold">State : </mat-title>
+            <span>{{details.state }}</span>
+            <br>
+            <mat-title class="font-weight-bold">Pin Code : </mat-title>
+            <span>{{details.pin }}</span>
+            <br>
+            <mat-title class="font-weight-bold">Contact No. : </mat-title>
+            <span>{{details.phone }}</span>
+            <hr>
+        </div>
+    </div> -->
+
+<div class="container emp-profile bg-secondary" *ngFor="let profile of userDetails">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="https://i.pinimg.com/736x/5f/40/6a/5f406ab25e8942cbe0da6485afd26b71.jpg" alt="user_image" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h1 class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="50px" height="50px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>                        {{profile.fname | uppercase}} {{profile.lname | uppercase}}
+                    </h1>
+                    <hr>
+                    <h2 class="text-center">User Details</h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>User Id</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile._id}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.fname}} {{profile.lname}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.email}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.phone}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Address</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.address}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>State</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.state}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Pin</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.pin}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col-md-4">
+            <input type="submit" class="profile-edit-btn" name="btnAddMore" routerLink="/merchant/signUp" [queryParams]="{id :profile._id}" value="Edit Profile" />
+        </div>
+    </form>
+</div>

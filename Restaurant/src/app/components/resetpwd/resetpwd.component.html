@@ -1,0 +1,31 @@
+<div class="container bg-secondary">
+    <h1 class="text-center text-warning">Forgot Password</h1>
+    <hr>
+    <form #forgetForm="ngForm" class="login-form" (ngSubmit)="forget(forgetForm)" class="form">
+        <div *ngIf="!token">
+            <h2 class="text-info">Enter Email</h2>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Email" type="email" class="form-control" name="email" ngModel email #email="ngModel" required>
+                <mat-error id="emailHelp" *ngIf="email.touched && !email.valid" class="form-text text-danger">
+                    <span>Email not found</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="form-element">
+                <button type="submit" class="button btn btn-outline-primary" [disabled]="!forgetForm.valid">{{button}}</button>
+            </div>
+        </div>
+        <div *ngIf="token">
+            <h2 class="text-info">Change password</h2>
+            <mat-form-field class="form-element">
+                <input matInput placeholder="Password" type="text" class="form-control" name="password" ngModel password #password="ngModel" required>
+                <mat-error id="emailHelp" *ngIf="password.touched && !password.valid" class="form-text text-danger">
+                    <span>Please Enter password</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="form-element">
+                <button type="submit" class="button btn btn-outline-success" [disabled]="!forgetForm.valid">{{button}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
